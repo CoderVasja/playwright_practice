@@ -10,6 +10,7 @@ import { testData } from '../../utils/fixtures/test-data';
 
 test.describe('Login Page Tests', () => {
     let loginPage: LoginPage;  
+    
     test.beforeEach(async ({ page }) => {
         loginPage = new LoginPage(page);  
         await loginPage.goto();  
