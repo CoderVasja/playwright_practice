@@ -1,6 +1,6 @@
 export const testData = {
     testUser: 'standard_user',
-    password: 'secret_saucegi',
+    password: 'secret_sauce',
     envData: {
         dev: 'https://www.saucedemo.com/',
     },
