@@ -1,4 +1,5 @@
 import { Page, Locator } from '@playwright/test';
+import { testData } from '../utils/fixtures/test-data';
 
 
 
@@ -20,7 +21,7 @@ export class LoginPage {
 
     async goto() {
     
-        await this.page.goto(process.env.BASE_URL!);
+        await this.page.goto(testData.envData.dev);
     }
 
     async login(username?: string, password?: string) {
