@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "test:dev": "cross-env NODE_ENV=dev npx playwright test",
+    "test:dev": "cross-env NODE_ENV=dev npx playwright test --ui",
     "test:stage": "cross-env NODE_ENV=stage npx playwright test"
   },
   "keywords": [],

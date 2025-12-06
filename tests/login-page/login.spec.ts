@@ -2,11 +2,11 @@ import { test, expect } from '@playwright/test';
 // import validation messages
 import { validationMessages } from '../../utils/fixtures/validation-message';
 // import LoginPage class from pages
-import {LoginPage} from '../../pages/login-page';  
+import {LoginPage} from '../../pages/login-page'; 
+// import test data 
+import { testData } from '../../utils/fixtures/test-data';
 
-// for loading environment variables
-import dotenv from 'dotenv';
-dotenv.config({ path: './dev.env' });
+
 
 test.describe('Login Page Tests', () => {
     let loginPage: LoginPage;  
@@ -16,7 +16,8 @@ test.describe('Login Page Tests', () => {
     });
 
     test('Valid Login Test', async ({ page }) => {
-        await loginPage.login(process.env.USERNAME, process.env.PASSWORD); 
+        await loginPage.login(testData.testUser, testData.password);
+        expect (page.url()).toBe(process.env.BASE_URL + 'inventory.html');
     });
 
     test('Login with empty fields', async ({ page }) => {
